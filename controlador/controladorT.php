@@ -12,7 +12,7 @@ if($Vr==1){
         
         } else{
             if($Vr==4){
-                include("../vista/EliminarL.html");
+                include("../vista/EliminarT.html");
             
         }
     }
