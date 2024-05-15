@@ -1,0 +1,358 @@
+header {
+    background-color: #f0f0f0; /* Add a background color */
+    padding: 1px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+  }
+  
+  nav li {
+    margin-right: 20px;
+  }
+  
+  nav a {
+    text-decoration: none;
+    color: #333;
+  }
+  
+  nav a:hover {
+    color: #666;
+  }
+  
+  select {
+    font-size: 16px;
+    padding: 0.5em;
+    border: none;
+    border-radius: 0.5em;
+  }
+  
+  main {
+    padding: 2em;
+  }
+  
+  h1 {
+    font-size: 36px;
+    margin-bottom: 0.5em;
+  }
+  
+  p {
+    font-size: 18px;
+    margin-bottom: 1em;
+  }
+  /*  */
+#hero {
+    min-height: 100vh;
+    position:relative;
+}
+/* CSS en styless.css */
+
+body {
+    margin: 0; /* Eliminar el margen predeterminado */
+    padding: 0; /* Eliminar el padding predeterminado */
+    overflow: hidden; /* Evitar que el video se desborde de la ventana del navegador */
+}
+
+video {
+    position: fixed; /* Fijar el video en la ventana del navegador */
+    top: 0;
+    left: 0;
+    min-width: 100%; /* Hacer que el video ocupe toda la anchura */
+    min-height: 100%; /* Hacer que el video ocupe toda la altura */
+    width: auto;
+    height: auto;
+    z-index: -1; /* Colocar el video detrás de todos los demás elementos */
+}
+
+/* Resto de tu CSS */
+.capa{
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background: #1c1c1d; /* Semicolon added here */
+    opacity: 0.5;
+    mix-blend-mode: overlay;
+}
+
+/*  */
+.división img{
+    margin-top: 40px;
+    object-fit: contain;
+    height: 20px;
+}
+/*  */
+body {
+    margin: 0px;
+    font-family: "SoDo Sans SemiBold", Helvetica Neue, Helvetica, Arial,sans-serif;
+    background-color: #d8d8d8;
+}
+.navbar-container {
+    box-shadow: 0px 4px 5px 0px rgba(191, 122, 122, 0.71);
+    -webkit-box-shadow: 0px 4px 5px 0px rgba(191, 122, 122, 0.71);
+    -moz-box-shadow: 0px 4px 5px 0px rgba(191, 122, 122, 0.71);
+    background-color: #77bfe1;
+}
+.navbar {
+    max-width: 1560px;
+    padding: 0;
+    font-size: 14px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: auto;
+}
+
+.navbar-left svg {
+    width: 80px;
+    margin-right: 80px;
+    
+}
+
+.navbar-left div {
+    text-transform: uppercase;
+    font-weight: 8000;
+}
+.navbar-left div:hover,
+.find-a-store:hover {
+    color: #ffffff;
+}
+
+.navbar-left,
+.navbar-right {
+    display: flex;
+    align-items: center;
+}
+
+.navbar-left > *,
+.navbar-right > * {
+    margin: 10px;
+}
+
+.container {
+    max-width: 1440px;
+    margin: auto;
+    background-color: #3a659e;
+}
+.product img {
+    max-width: 75%;
+    object-fit: contain;
+    height: 75%;
+}
+.product {
+    display: flex;
+}
+
+.product-left,
+.product-right {
+    max-width: 50%;
+    display: flex;
+    width: 50%;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    align-content: stretch;
+    flex-direction: column;
+    margin-top: -3%;
+}
+
+.product-title {
+    width: 80%;
+    text-align: justify;
+    color: white;
+}
+.product-title img{
+    margin-top: -3%;
+    margin-bottom: -27%;
+    margin-left: 10%;
+    max-width: 75%;
+    object-fit: contain;
+    height: 100%
+}
+.product-container {
+    margin: 40px 0px 40px 0px;
+    display: flex;
+}
+
+.product-button {
+    border: 1px solid white;
+    max-width: max-content;
+    padding: 5px 20px 5px 20px;
+    border-radius: 40px;
+    text-align: center;
+    margin: auto;
+    margin-bottom: 30px;
+}
+
+.product-button-white {
+    color: white;
+}
+
+.product-button-black {
+    color: black;
+    border-color: black;
+}
+
+.product-description {
+    text-align: center;
+    padding: 30px 60px 30px 60px;
+    font-size: 18px;
+}
+
+.footer {
+    padding: 50px;
+    text-align: center;
+    background-color: #77bfe1;
+        padding: 5px 0 0 0;
+        margin: auto;
+        overflow: hidden;
+        color: aliceblue;
+}
+/* clientes */
+.boton1{
+    text-decoration:none;
+    font-weight: 60;
+    font-size: 15px;
+    color:#333333;
+    padding-top:15px;
+    padding-bottom:15px;
+    padding-left:40px;
+    padding-right:40px;
+    background-color:#FFD27D;
+    border-color: #d8d8d8;
+    border-width: 2px;
+    border-style: solid;
+    border-radius:35px;
+}
+.boton2{
+    text-decoration:none;
+    font-weight: 600;
+    font-size: 15px;
+    color:#333333;
+    padding-top:15px;
+    padding-bottom:15px;
+    padding-left:40px;
+    padding-right:40px;
+    background-color:#FFD27D;
+    border-color: #d8d8d8;
+    border-width: 2px;
+    border-style: solid;
+    border-radius:35px;
+}
+.ubicar{
+    padding-top:20px;
+}
+
+/*  */
+.cubo{
+    display: flex;
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+    min-height: 100vh; /* Ajusta la altura al 100% del viewport */
+    background-color: transparent; /* Elimina el color de fondo */
+}
+.contenedor{
+    position: relative;
+    top: -230px;
+    transform: skewY(-20deg); /* Mantén la inclinación */
+    animation: animate 5s linear infinite; /* Mantén la animación */
+}
+
+@keyframes animate{
+    0%{
+        filter: hue-rotate(0deg);
+    }
+    100%{
+        filter: hue-rotate(360deg);
+    }
+}
+.contenedor .cube{
+    position: relative;
+    z-index: 2;
+}
+.contenedor .cube:nth-child(2){
+    z-index: 1;
+    translate: -60px -60px;
+}
+.contenedor .cube:nth-child(3){
+    z-index: 3;
+    translate: 60px 60px;
+}
+.contenedor .cube div{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    translate: calc(-70px * var(--x)) calc(-70px * var(--y));
+}
+.contenedor .cube div span{
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    background: #dcdcdc;
+    z-index: calc(1 * var(--i));
+    transition: 1.5s;
+}
+.contenedor .cube div span:hover{
+    transition: 0s;
+    background: #ef4149;
+    filter: drop-shadow(0 0 30px #ef4149);
+}
+.contenedor .cube div span::before{
+    content: '';
+    position: absolute;
+    left: -40px;
+    width: 40px;
+    height: 100%;
+    background: #fff;
+    transform-origin: right;
+    transform: skewY(45deg);
+    transition: 1.5s;
+}
+.contenedor .cube div span:hover::before{
+    transition: 0s;
+    background: #f75d64;
+}
+
+.contenedor .cube div span::after{
+    content: '';
+    position: absolute;
+    top: -40px;
+    left: 0;
+    width: 100%;
+    height: 40px;
+    background: #f2f2f2;
+    transform-origin: bottom;
+    transform: skewX(45deg);
+    transition: 1.5s;
+}
+.contenedor .cube div span:hover::after{
+    transition: 0s;
+    background: #f14e55;
+}
+/* Estilos para el contenedor de las tarjetas */
+.card-container {
+    display: flex; /* Utilizamos Flexbox */
+    justify-content: space-between; /* Distribución equitativa entre las tarjetas */
+    max-width: 800px; /* Ajusta según tus necesidades */
+    margin: 0 auto; /* Centra el contenedor horizontalmente */
+    margin-top: 45px;
+}
+
+/* Estilos para cada tarjeta */
+.card {
+    background-color: #f5f5f5;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    flex: 1; /* Ocupa espacio equitativo dentro del contenedor */
+    margin: 0 10px; /* Espacio entre las tarjetas */
+}
