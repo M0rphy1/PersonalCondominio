@@ -5,13 +5,13 @@ include('../config/conexion.php');
 $buscar = false;
 
 // Consultar toda la información del personal por defecto
-$sql = "SELECT p.codigo AS codigo_personal, p.cedula, p.nombre, p.apellido, l.codigo AS codigo_tecnico, t.nombrearea, t.sueldo FROM personal p LEFT JOIN tecnico t ON p.codigo = t.codigopersonal";
+$sql = "SELECT p.codigo AS codigo_personal, p.cedula, p.nombre, p.apellido, l.codigo AS codigo_informatico, t.nombrearea, t.sueldo FROM personal p LEFT JOIN informatico t ON p.codigo = t.codigopersonal";
 
 // Verificar si se ha enviado una solicitud de búsqueda
 if(isset($_GET['buscar'])){
     $cedula = $_GET['cedula'];
     $buscar = true;
-    $sql = "SELECT p.codigo AS codigo_personal, p.cedula, p.nombre, p.apellido, t.codigo AS codigo_tecnico, t.nombrearea, t.sueldo FROM personal p LEFT JOIN tecnico t ON p.codigo = t.codigopersonal WHERE p.cedula='$cedula'";
+    $sql = "SELECT p.codigo AS codigo_personal, p.cedula, p.nombre, p.apellido, t.codigo AS codigo_informatico, t.nombrearea, t.sueldo FROM personal p LEFT JOIN informatico t ON p.codigo = t.codigopersonal WHERE p.cedula='$cedula'";
 }
 
 // Ejecutar la consulta
@@ -25,7 +25,7 @@ $result = $conexion->query($sql);
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Personal Tecnico</title>
+    <title>Personal informatico</title>
 </head>
 <body> <center>
 <div class="navbar-container">
@@ -62,7 +62,7 @@ $result = $conexion->query($sql);
             while($row = $result->fetch_assoc()) {
                 echo "<tr>";
                 echo "<td>" . $row["codigo_personal"] . "</td>";
-                echo "<td>" . $row["codigo_tecnico"] . "</td>";
+                echo "<td>" . $row["codigo_informatico"] . "</td>";
                 echo "<td>" . $row["cedula"] . "</td>";
                 echo "<td>" . $row["nombre"] . "</td>";
                 echo "<td>" . $row["apellido"] . "</td>";

@@ -17,9 +17,9 @@
 include("../config/conexion.php");
 
 $cedula = $_GET['cedula'];
-$sql = "SELECT p.codigo AS codigo_personal, t.codigo AS codigo_tecnico, p.cedula, p.nombre, p.apellido, t.nombrearea, t.sueldo 
+$sql = "SELECT p.codigo AS codigo_personal, t.codigo AS codigo_informatico, p.cedula, p.nombre, p.apellido, t.nombrearea, t.sueldo 
             FROM personal p 
-            LEFT JOIN tecnico t ON p.codigo = t.codigopersonal 
+            LEFT JOIN informatico t ON p.codigo = t.codigopersonal 
             WHERE p.cedula='$cedula'";
 $resultado = mysqli_query($conexion, $sql);
 
@@ -47,7 +47,7 @@ while ($mostrar = mysqli_fetch_array($resultado)) {
         </tr>
             <tr>
                 <td><input type="text" value="<?php echo $mostrar['codigo_personal'] ?>" name="codigopersonal" readonly ></td>
-                <td><span><?php echo $mostrar['codigo_tecnico'] ?></span></td>
+                <td><span><?php echo $mostrar['codigo_informatico'] ?></span></td>
                 <td><input type="text" value="<?php echo $mostrar['cedula'] ?>" name="cedula" readonly ></td>
                 <td><input type="text" value="<?php echo $mostrar['nombre'] ?>" name="nombre"></td>
                 <td><input type="text" value="<?php echo $mostrar['apellido'] ?>" name="apellido"></td>

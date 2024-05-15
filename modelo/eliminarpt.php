@@ -5,14 +5,14 @@ include('../config/conexion.php');
 if(isset($_POST['eliminar'])){
     // Obtener los datos de la solicitud de eliminación
     $codigo_personal = $_POST['codigo_personal'];
-    $codigo_limpieza = $_POST['codigo_tecnico'];
+    $codigo_limpieza = $_POST['codigo_informatico'];
 
     // Ejecutar la consulta SQL para eliminar los datos de las tablas
     $sql_personal = "DELETE FROM personal WHERE codigo='$codigo_personal'";
-    $sql_limpieza = "DELETE FROM tecnico WHERE codigo='$codigo_tecnico'";
+    $sql_limpieza = "DELETE FROM informatico WHERE codigo='$codigo_informatico'";
 
     // Ejecutar las consultas SQL
-    if ($conexion->query($sql_personal) === TRUE && $conexion->query($sql_tecnico) === TRUE) {
+    if ($conexion->query($sql_personal) === TRUE && $conexion->query($sql_informatico) === TRUE) {
         echo '<script language="javascript">alert("Eliminación exitosa");</script>';
         header("Location: ../PersonalGeneral.html"); // Redireccionar al index
         exit(); // Salir del script después de la redirección

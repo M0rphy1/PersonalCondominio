@@ -25,9 +25,9 @@ if(isset($_GET['cedula'])){
     $cedula = $_GET['cedula'];
 
     // Realizar la consulta en la base de datos para obtener los datos correspondientes a la cédula
-    $sql = "SELECT p.codigo AS codigo_personal, t.codigo AS codigo_tecnico, p.cedula, p.nombre, p.apellido, t.nombrearea, t.sueldo 
+    $sql = "SELECT p.codigo AS codigo_personal, t.codigo AS codigo_informatico, p.cedula, p.nombre, p.apellido, t.nombrearea, t.sueldo 
             FROM personal p 
-            LEFT JOIN tecnico t ON p.codigo = t.codigopersonal 
+            LEFT JOIN informatico t ON p.codigo = t.codigopersonal 
             WHERE p.cedula='$cedula'";
     $result = $conexion->query($sql);
 
@@ -49,7 +49,7 @@ if(isset($_GET['cedula'])){
         while($row = $result->fetch_assoc()) {
             echo "<tr>";
             echo "<td>" . $row["codigo_personal"] . "</td>";
-            echo "<td>" . $row["codigo_tecnico"] . "</td>";
+            echo "<td>" . $row["codigo_informatico"] . "</td>";
             echo "<td>" . $row["cedula"] . "</td>";
             echo "<td>" . $row["nombre"] . "</td>";
             echo "<td>" . $row["apellido"] . "</td>";
@@ -59,7 +59,7 @@ if(isset($_GET['cedula'])){
             echo "<td>
                     <form method='post' action='eliminarpl.php'>
                         <input type='hidden' name='codigo_personal' value='" . $row["codigo_personal"] . "'>
-                        <input type='hidden' name='codigo_tecnico' value='" . $row["codigo_tecnico"] . "'>
+                        <input type='hidden' name='codigo_informatico' value='" . $row["codigo_informatico"] . "'>
                         <input type='submit' name='eliminar' value='Eliminar'>
                     </form>
                   </td>";

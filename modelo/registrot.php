@@ -28,8 +28,8 @@ if(mysqli_num_rows($resultado) > 0) {
 
     // Verificamos si se obtuvo un código personal válido
     if($codigo_personal !== null) {
-        // Insertamos los datos en la tabla tecnico con el código personal como clave foránea
-        $sql_limpieza = "INSERT INTO tecnico (nombrearea, sueldo, codigopersonal) VALUES ('$nombrearea', '$sueldo', '$codigo_personal')";
+        // Insertamos los datos en la tabla informatico con el código personal como clave foránea
+        $sql_limpieza = "INSERT INTO informatico (nombrearea, sueldo, codigopersonal) VALUES ('$nombrearea', '$sueldo', '$codigo_personal')";
         mysqli_query($conexion, $sql_limpieza);
 
         // Notificamos al usuario que se ha registrado exitosamente
