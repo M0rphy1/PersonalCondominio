@@ -17,10 +17,11 @@ if(isset($_GET['buscar'])){
     if ($result->num_rows > 0) {
         // Redirigir a la vista de resultados con los datos obtenidos
         echo '<script language="javascript">alert("Búsqueda exitosa");</script>';
-        include("../vista/ResultadosL.php");
+        include("../modelo/actualizarL.php");
     } else {
         // No se encontraron resultados, redirigir a una vista indicando la ausencia de resultados
         echo '<script language="javascript">alert("Error, no se encontró");</script>';
+        include("../vista/RegistroL.html");
         exit();
     }
 } else {
