@@ -14,11 +14,11 @@ if(isset($_POST['eliminar'])){
     // Ejecutar las consultas SQL
     if ($conexion->query($sql_personal) === TRUE && $conexion->query($sql_informatico) === TRUE) {
         echo '<script language="javascript">alert("Eliminación exitosa");</script>';
-        header("Location: ../PersonalGeneral.html"); // Redireccionar al index
+        header("Location: ../index.html"); // Redireccionar al index
         exit(); // Salir del script después de la redirección
     } else {
         echo '<script language="javascript">alert("Error, no se pudo eliminar");</script>';
-        header("Location: ../PersonalGeneral.html"); // Redireccionar al index
+        header("Location: ../index.html"); // Redireccionar al index
         exit(); // Salir del script después de la redirección
     }
 }
