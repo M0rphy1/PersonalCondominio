@@ -3,14 +3,14 @@ include('../config/conexion.php');
 
 // Verificar si se ha enviado una solicitud de búsqueda
 if(isset($_GET['buscar'])){
-    // Obtener el valor del parámetro 'cedula' del formulario
-    $cedula = $_GET['cedula'];
+    // Obtener el valor del parámetro 'codigo_informatico' del formulario
+    $codigo_limpieza = $_GET['codigo_informatico'];
 
     // Realizar la consulta en la base de datos
     $sql = "SELECT p.codigo AS codigo_personal, t.codigo AS codigo_informatico, p.cedula, p.nombre, p.apellido, t.nombrearea, t.sueldo 
             FROM personal p 
             LEFT JOIN informatico t ON p.codigo = t.codigopersonal 
-            WHERE p.cedula='$cedula'";
+            WHERE t.codigo='$codigo_informatico'";
     $result = $conexion->query($sql);
 
     // Verificar si se encontraron resultados
@@ -20,8 +20,8 @@ if(isset($_GET['buscar'])){
         include("../modelo/actualizarT.php");
     } else {
         // No se encontraron resultados, redirigir a una vista indicando la ausencia de resultados
-        echo '<script language="javascript">alert("Error, no se encontró");</script>';
-        include("../vista/RegistroT.html");
+        echo '<script language="javascript">alert("Error, no hay ningún código perteneciente al área. Revise el área al que corresponde");</script>';
+        include("../vista/ActualizarT.php");
         exit();
     }
 } else {

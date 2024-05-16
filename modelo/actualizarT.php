@@ -9,18 +9,18 @@
     <script src="../public/ext/bootstrap/js/jquery-3.2.1.min.js"></script>
 </head>
 <body>
-    <center><h1>Actualizar datos de Personal de Cédula: <?php echo $cedula; ?></h1></center>
+    <center><h1>Actualizar datos de Personal de Código de Técnico Informático: <?php echo $cedula; ?></h1></center>
 </body>
 </html>
 
 <?php
 include("../config/conexion.php");
 
-$cedula = $_GET['cedula'];
+$cedula = $_GET['codigo_informatico'];
 $sql = "SELECT p.codigo AS codigo_personal, t.codigo AS codigo_informatico, p.cedula, p.nombre, p.apellido, t.nombrearea, t.sueldo 
             FROM personal p 
             LEFT JOIN informatico t ON p.codigo = t.codigopersonal 
-            WHERE p.cedula='$cedula'";
+            WHERE t.codigo='$codigo_informatico'";
 $resultado = mysqli_query($conexion, $sql);
 
 while ($mostrar = mysqli_fetch_array($resultado)) {
