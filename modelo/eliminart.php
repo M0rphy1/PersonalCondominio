@@ -26,7 +26,7 @@ if(isset($_GET['buscar'])){
     }
 } else {
     // Si no se ha enviado una solicitud de búsqueda, redirigir a una página de error o a la página principal
-    include("../PersonalGeneral.html");
+    include("../index.html");
     exit();
 }
 
