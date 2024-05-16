@@ -12,7 +12,7 @@
     mysqli_query($conexion, $sql_personal);
 
     // Actualizar los datos en la tabla limpieza utilizando el código personal como clave foránea
-    $sql_limpieza = "UPDATE mantenimiento SET nombrearea = '$nombrearea', sueldo= '$sueldo' WHERE codigopersonal='$codigo_personal'";
+    $sql_mantenimiento = "UPDATE mantenimiento SET nombrearea = '$nombrearea', sueldo= '$sueldo' WHERE codigopersonal='$codigo_personal'";
     mysqli_query($conexion, $sql_mantenimiento);
 
     // Notificar al usuario que se ha registrado exitosamente
