@@ -10,7 +10,7 @@ if(isset($_GET['buscar'])){
     $sql = "SELECT p.codigo AS codigo_personal, m.codigo AS codigo_mantenimiento, p.cedula, p.nombre, p.apellido, m.nombrearea, m.sueldo 
             FROM personal p 
             LEFT JOIN mantenimiento m ON p.codigo = m.codigopersonal 
-            WHERE m.codigo='$codigo_limpieza'";
+            WHERE m.codigo='$codigo_mantenimiento'";
     $result = $conexion->query($sql);
 
     // Verificar si se encontraron resultados
