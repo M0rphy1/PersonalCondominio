@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eliminar Personal de Mantenimiento</title>
+</head>
+<body> <center>
+<div class="navbar-container">
+        <div class="navbar">
+            <div class="navbar-left">
+                <div><a href="index.html"></a></div>
+                <div><a class="" href="../index.html"><h1><center>Gestión de Personal de Mantenimiento</center></h1></a><br></a></div>
+            </div>
+        </div>
+    </div>
+    <h2>Información del Personal</h2>
+
+    <!-- Formulario de búsqueda -->
+    <form method="GET" action="../modelo/eliminarM.php">
+        <label for="cedula">Cédula:</label>
+        <input type="text" name="cedula" id="cedula" placeholder="Ingrese la cédula">
+        <input type="submit" name="buscar" value="Buscar">
+    </form>
+
+</body>
+</html>
+
