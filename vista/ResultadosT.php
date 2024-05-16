@@ -2,15 +2,15 @@
 include('../config/conexion.php');
 
 // Verificar si se ha enviado la cédula como parámetro en la URL
-if(isset($_GET['cedula'])){
-    // Obtener la cédula de la URL
-    $cedula = $_GET['cedula'];
+if(isset($_GET['codigo_informatico'])){
+    // Obtener el codigo_informatico de la URL
+    $cedula = $_GET['codigo_informatico'];
 
-    // Realizar la consulta en la base de datos para obtener los datos correspondientes a la cédula
+    // Realizar la consulta en la base de datos para obtener los datos correspondientes al codigo_informatico
     $sql = "SELECT p.codigo AS codigo_personal, t.codigo AS codigo_informatico, p.cedula, p.nombre, p.apellido, t.nombrearea, t.sueldo 
             FROM personal p 
             LEFT JOIN informatico t ON p.codigo = t.codigopersonal 
-            WHERE p.cedula='$cedula'";
+            WHERE t.codigo='$codigo_informatico'";
     $result = $conexion->query($sql);
 
     // Mostrar resultados en una tabla si se encontraron resultados
@@ -29,12 +29,12 @@ if(isset($_GET['cedula'])){
         <div class="navbar">
             <div class="navbar-left">
                 <div><a href="index.html"></a></div>
-                <div><a class="" href="../index.html"><h1><center>Gestión de Personal Técnico</center></h1></a><br></a></div>
+                <div><a class="" href="../Tecnico.html"><h1><center>Gestión de Personal Técnico</center></h1></a><br></a></div>
             </div>
         </div>
     </div>
     <center>
-    <h2>Resultados de Búsqueda para la Cédula: <?php echo $cedula; ?></h2>
+    <h2>Resultados de Búsqueda para el código de áre de Tecnico informatico: <?php echo $cedula; ?></h2>
     <!-- Tabla de resultados -->
     <table border="1">
         <tr>
