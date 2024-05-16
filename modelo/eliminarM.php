@@ -7,7 +7,7 @@ if(isset($_GET['buscar'])){
     $cedula = $_GET['cedula'];
 
     // Realizar la consulta en la base de datos
-    $sql = "SELECT p.codigo AS codigo_personal, l.codigo AS codigo_mantenimiento, p.cedula, p.nombre, p.apellido, m.nombrearea, m.sueldo 
+    $sql = "SELECT p.codigo AS codigo_personal, m.codigo AS codigo_mantenimiento, p.cedula, p.nombre, p.apellido, m.nombrearea, m.sueldo 
             FROM personal p 
             LEFT JOIN mantenimiento m ON p.codigo = m.codigopersonal 
             WHERE p.cedula='$cedula'";
