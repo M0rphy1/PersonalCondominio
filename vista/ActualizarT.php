@@ -4,14 +4,14 @@ include('../config/conexion.php');
 // Inicializar la variable de búsqueda
 $buscar = false;
 
-// Consultar toda la información del personal por defecto
-$sql = "SELECT p.codigo AS codigo_personal, p.cedula, p.nombre, p.apellido, l.codigo AS codigo_informatico, t.nombrearea, t.sueldo FROM personal p LEFT JOIN informatico t ON p.codigo = t.codigopersonal";
+// Consultar toda la información del personal por defecto, solo aquellos que tengan datos en tecnico informatico
+$sql = "SELECT p.codigo AS codigo_personal, p.cedula, p.nombre, p.apellido, t.codigo AS codigo_informatico, t.nombrearea, t.sueldo FROM personal p LEFT JOIN informatico t ON p.codigo = t.codigopersonal WHERE t.codigo IS NOT NULL";
 
 // Verificar si se ha enviado una solicitud de búsqueda
 if(isset($_GET['buscar'])){
-    $cedula = $_GET['cedula'];
+    $codigo_personal = $_GET['codigo_informatico'];
     $buscar = true;
-    $sql = "SELECT p.codigo AS codigo_personal, p.cedula, p.nombre, p.apellido, t.codigo AS codigo_informatico, t.nombrearea, t.sueldo FROM personal p LEFT JOIN informatico t ON p.codigo = t.codigopersonal WHERE p.cedula='$cedula'";
+    $sql = "SELECT p.codigo AS codigo_personal, p.cedula, p.nombre, p.apellido, t.codigo AS codigo_informatico, t.nombrearea, t.sueldo FROM personal p LEFT JOIN informatico t ON p.codigo = t.codigopersonal WHERE t.codigo='$codigo_personal' AND t.codigo IS NOT NULL";
 }
 
 
@@ -33,7 +33,7 @@ $result = $conexion->query($sql);
         <div class="navbar">
             <div class="navbar-left">
                 <div><a href="index.html"></a></div>
-                <div><a class="" href="../index.html"><h1><center>Gestión de Personal Técnico Informático</center></h1></a><br></a></div>
+                <div><a class="" href="../Tecnico.html"><h1><center>Gestión de Personal Técnico Informático</center></h1></a><br></a></div>
             </div>
         </div>
     </div>
@@ -41,8 +41,8 @@ $result = $conexion->query($sql);
 
     <!-- Formulario de búsqueda -->
     <form method="GET" action="../modelo/busquedaAT.php">
-        <label for="cedula">Cédula:</label>
-        <input type="text" name="cedula" id="cedula" placeholder="Ingrese la cédula">
+        <label for="cedula">Código Área Técnico Informático:</label>
+        <input type="text" name="codigo_informatico" id="codigo_informatico" placeholder="Ingrese código de área de técnico informático">
         <input type="submit" name="buscar" value="Buscar">
     </form>
     <br>
