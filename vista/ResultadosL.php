@@ -2,15 +2,15 @@
 include('../config/conexion.php');
 
 // Verificar si se ha enviado la cédula como parámetro en la URL
-if(isset($_GET['cedula'])){
+if(isset($_GET['codigo_limpieza'])){
     // Obtener la cédula de la URL
-    $cedula = $_GET['cedula'];
+    $codigo_limpieza = $_GET['codigo_limpieza'];
 
     // Realizar la consulta en la base de datos para obtener los datos correspondientes a la cédula
     $sql = "SELECT p.codigo AS codigo_personal, l.codigo AS codigo_limpieza, p.cedula, p.nombre, p.apellido, l.nombrearea, l.sueldo 
             FROM personal p 
             LEFT JOIN limpieza l ON p.codigo = l.codigopersonal 
-            WHERE p.cedula='$cedula'";
+            WHERE l.codigo='$codigo_limpieza'";
     $result = $conexion->query($sql);
 
     // Mostrar resultados en una tabla si se encontraron resultados
@@ -29,12 +29,12 @@ if(isset($_GET['cedula'])){
         <div class="navbar">
             <div class="navbar-left">
                 <div><a href="index.html"></a></div>
-                <div><a class="" href="../index.html"><h1><center>Gestión de Personal de Limpieza</center></h1></a><br></a></div>
+                <div><a class="" href="../Limpieza.html"><h1><center>Gestión de Personal de Limpieza</center></h1></a><br></a></div>
             </div>
         </div>
     </div>
     <center>
-    <h2>Resultados de Búsqueda para la Cédula: <?php echo $cedula; ?></h2>
+    <h2>Resultados de Búsqueda para el código de áre de Limpieza: <?php echo $codigo_limpieza; ?></h2>
     <!-- Tabla de resultados -->
     <table border="1">
         <tr>
@@ -76,4 +76,3 @@ if ($conexion->connect_error) {
     $conexion->close();
 }
 ?>
-
